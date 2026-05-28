@@ -1,0 +1,478 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* Peehu Sakhi Light Theme */
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --primary: #6366F1;
+  --primary-foreground: #FFFFFF;
+  --secondary: #64748B;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #3B82F6;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(15, 23, 42, 0.1);
+  --input: transparent;
+  --input-background: #FFFFFF;
+  --switch-background: #CBD5E1;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #6366F1;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 1rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #6366F1;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F8FAFC;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: rgba(15, 23, 42, 0.1);
+  --sidebar-ring: #6366F1;
+
+  /* Peehu Sakhi Brand Gradients */
+  --brand-gradient-from: #6366F1;
+  --brand-gradient-to: #3B82F6;
+  --secondary-gradient-from: #8B5CF6;
+  --secondary-gradient-to: #06B6D4;
+}
+
+.dark {
+  /* Peehu Sakhi Dark Theme */
+  --background: #020617;
+  --foreground: #E2E8F0;
+  --card: #0F172A;
+  --card-foreground: #E2E8F0;
+  --popover: #0F172A;
+  --popover-foreground: #E2E8F0;
+  --primary: #6366F1;
+  --primary-foreground: #FFFFFF;
+  --secondary: #64748B;
+  --secondary-foreground: #E2E8F0;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: #3B82F6;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(226, 232, 240, 0.1);
+  --input: #1E293B;
+  --ring: #6366F1;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #0F172A;
+  --sidebar-foreground: #E2E8F0;
+  --sidebar-primary: #6366F1;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #E2E8F0;
+  --sidebar-border: rgba(226, 232, 240, 0.1);
+  --sidebar-ring: #6366F1;
+
+  /* Brand Gradients remain the same in dark mode */
+  --brand-gradient-from: #6366F1;
+  --brand-gradient-to: #3B82F6;
+  --secondary-gradient-from: #8B5CF6;
+  --secondary-gradient-to: #06B6D4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+/* ==========================================
+   Peehu Sakhi - Ultra Premium Light Mode Overrides
+   ========================================== */
+
+:root:not(.dark) {
+  --slate-950-fallback: #F8FAFC;
+  --slate-900-fallback: #FFFFFF;
+  --slate-850-fallback: rgba(15, 23, 42, 0.05);
+  --slate-800-fallback: rgba(15, 23, 42, 0.07);
+  --slate-700-fallback: rgba(15, 23, 42, 0.12);
+  --slate-100-fallback: #0F172A;
+  --slate-200-fallback: #1E293B;
+  --slate-300-fallback: #334155;
+  --slate-400-fallback: #334155; /* Higher contrast slate-700 for editorial layout */
+  --slate-450-fallback: #475569; /* Higher contrast slate-600 */
+  --slate-500-fallback: #64748B; /* Higher contrast slate-500 */
+}
+
+/* Base structural background and text override in Light Mode */
+:root:not(.dark) .bg-slate-950 {
+  background-color: var(--slate-950-fallback) !important;
+}
+
+/* Glassmorphic Panel Overrides in Light Mode */
+:root:not(.dark) .bg-slate-900,
+:root:not(.dark) .bg-slate-900\/40,
+:root:not(.dark) .bg-slate-900\/50,
+:root:not(.dark) .bg-slate-900\/60,
+:root:not(.dark) .bg-slate-900\/80,
+:root:not(.dark) .bg-slate-950\/40,
+:root:not(.dark) .bg-slate-950\/50,
+:root:not(.dark) .bg-slate-950\/60,
+:root:not(.dark) .bg-slate-950\/80 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(24px) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Translucent overlay cards */
+:root:not(.dark) .bg-slate-950\/5 {
+  background-color: rgba(15, 23, 42, 0.03) !important;
+}
+:root:not(.dark) .bg-slate-950\/10 {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+:root:not(.dark) .bg-slate-900\/50 {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Typography Remapping in Light Mode */
+:root:not(.dark) .text-slate-100 {
+  color: var(--slate-100-fallback) !important;
+}
+:root:not(.dark) .text-slate-200,
+:root:not(.dark) .text-slate-250 {
+  color: var(--slate-200-fallback) !important;
+}
+:root:not(.dark) .text-slate-300 {
+  color: var(--slate-300-fallback) !important;
+}
+:root:not(.dark) .text-slate-450 {
+  color: var(--slate-450-fallback) !important;
+}
+:root:not(.dark) .text-slate-400 {
+  color: var(--slate-400-fallback) !important;
+}
+:root:not(.dark) .text-slate-500 {
+  color: var(--slate-500-fallback) !important;
+}
+
+/* Selective text-white mapping to prevent button text issues */
+:root:not(.dark) h1.text-white,
+:root:not(.dark) h2.text-white,
+:root:not(.dark) h3.text-white,
+:root:not(.dark) h4.text-white,
+:root:not(.dark) p.text-white,
+:root:not(.dark) span.text-white:not(
+  button *,
+  button,
+  .bg-gradient-to-r *,
+  .bg-gradient-to-br *,
+  .bg-primary *,
+  .bg-cyan-500 *,
+  .bg-indigo-500 *,
+  .bg-purple-500 *
+) {
+  color: #0F172A !important;
+}
+
+/* Bolder high-contrast colors for neons / text icons in Light Mode (Not washed out, premium feel) */
+:root:not(.dark) .text-cyan-400,
+:root:not(.dark) .text-cyan-300,
+:root:not(.dark) .text-cyan-455 {
+  color: #0891B2 !important; /* cyan-600 */
+}
+:root:not(.dark) .text-indigo-400,
+:root:not(.dark) .text-indigo-300 {
+  color: #4F46E5 !important; /* indigo-600 */
+}
+:root:not(.dark) .text-purple-400,
+:root:not(.dark) .text-purple-300 {
+  color: #7C3AED !important; /* purple-600 */
+}
+:root:not(.dark) .text-rose-400,
+:root:not(.dark) .text-rose-350,
+:root:not(.dark) .text-rose-300 {
+  color: #E11D48 !important; /* rose-600 */
+}
+:root:not(.dark) .text-amber-400,
+:root:not(.dark) .text-amber-300 {
+  color: #D97706 !important; /* amber-600 */
+}
+:root:not(.dark) .text-emerald-400,
+:root:not(.dark) .text-emerald-300 {
+  color: #059669 !important; /* emerald-600 */
+}
+:root:not(.dark) .text-green-400,
+:root:not(.dark) .text-green-300 {
+  color: #16A34A !important; /* green-600 */
+}
+
+/* Border overrides in Light Mode */
+:root:not(.dark) .border-slate-900,
+:root:not(.dark) .border-slate-850,
+:root:not(.dark) .border-slate-800,
+:root:not(.dark) .border-slate-700,
+:root:not(.dark) .border-slate-800\/80,
+:root:not(.dark) .border-slate-900\/60,
+:root:not(.dark) .border-slate-900\/50,
+:root:not(.dark) .border-slate-800\/30 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Smart remapping of deep background gradients to soft, premium light pastels */
+:root:not(.dark) [class*="from-slate-900"],
+:root:not(.dark) [class*="from-slate-950"],
+:root:not(.dark) [class*="from-indigo-950"],
+:root:not(.dark) [class*="from-purple-950"],
+:root:not(.dark) [class*="from-cyan-950"],
+:root:not(.dark) [class*="from-teal-950"],
+:root:not(.dark) [class*="from-rose-950"] {
+  --tw-gradient-from: rgba(255, 255, 255, 0.95) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0)) !important;
+}
+
+/* Custom base pastel glows for each page-card type in Light Mode */
+:root:not(.dark) [class*="from-indigo-950"] {
+  --tw-gradient-from: rgba(224, 231, 255, 0.5) !important;
+}
+:root:not(.dark) [class*="from-purple-950"] {
+  --tw-gradient-from: rgba(243, 232, 255, 0.5) !important;
+}
+:root:not(.dark) [class*="from-cyan-950"] {
+  --tw-gradient-from: rgba(207, 250, 254, 0.55) !important;
+}
+:root:not(.dark) [class*="from-teal-950"] {
+  --tw-gradient-from: rgba(204, 251, 241, 0.5) !important;
+}
+:root:not(.dark) [class*="from-rose-950"] {
+  --tw-gradient-from: rgba(255, 228, 230, 0.5) !important;
+}
+
+/* Middle stops override */
+:root:not(.dark) [class*="via-slate-900"],
+:root:not(.dark) [class*="via-purple-950"],
+:root:not(.dark) [class*="via-cyan-950"],
+:root:not(.dark) [class*="via-blue-950"],
+:root:not(.dark) [class*="via-orange-950"],
+:root:not(.dark) [class*="via-indigo-950"] {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(255, 255, 255, 0.85), var(--tw-gradient-to, rgba(255, 255, 255, 0)) !important;
+}
+
+/* Target stops override */
+:root:not(.dark) [class*="to-slate-950"],
+:root:not(.dark) [class*="to-cyan-950"] {
+  --tw-gradient-to: rgba(255, 255, 255, 0.9) !important;
+}
+:root:not(.dark) [class*="to-cyan-950"] {
+  --tw-gradient-to: rgba(207, 250, 254, 0.35) !important;
+}
+
+/* Light Mode unique page gradients (ambient background glows) */
+:root:not(.dark) .bg-slate-950::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 50% 0%, var(--page-glow, rgba(99, 102, 241, 0.05)), transparent 55%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Glowing backdrops in Light Mode */
+.theme-landing {
+  --page-glow: rgba(99, 102, 241, 0.1) !important;
+}
+.theme-dashboard {
+  --page-glow: rgba(59, 130, 246, 0.08) !important;
+}
+.theme-chat {
+  --page-glow: rgba(139, 92, 246, 0.09) !important;
+}
+.theme-planner {
+  --page-glow: rgba(6, 182, 212, 0.09) !important;
+}
+.theme-habits {
+  --page-glow: rgba(16, 185, 129, 0.09) !important;
+}
+.theme-journal {
+  --page-glow: rgba(168, 85, 247, 0.08) !important;
+}
+.theme-analytics {
+  --page-glow: rgba(37, 99, 235, 0.09) !important;
+}
+.theme-books {
+  --page-glow: rgba(249, 115, 22, 0.09) !important;
+}
+.theme-skills {
+  --page-glow: rgba(20, 184, 166, 0.09) !important;
+}
+.theme-music {
+  --page-glow: rgba(236, 72, 153, 0.09) !important;
+}
+.theme-movies {
+  --page-glow: rgba(244, 63, 94, 0.09) !important;
+}
+.theme-gamification {
+  --page-glow: rgba(234, 179, 8, 0.09) !important;
+}
+.theme-mood {
+  --page-glow: rgba(6, 182, 212, 0.09) !important;
+}
+.theme-history {
+  --page-glow: rgba(100, 116, 139, 0.08) !important;
+}
+.theme-profile {
+  --page-glow: rgba(124, 58, 237, 0.08) !important;
+}
+.theme-settings {
+  --page-glow: rgba(71, 85, 105, 0.07) !important;
+}
+.theme-notifications {
+  --page-glow: rgba(249, 115, 22, 0.08) !important;
+}
+.theme-voice {
+  --page-glow: rgba(6, 182, 212, 0.09) !important;
+}
+
+/* Enhance subtle glows / depth details in Light Mode */
+:root:not(.dark) .bg-cyan-600\/5,
+:root:not(.dark) .bg-cyan-500\/5,
+:root:not(.dark) .bg-cyan-500\/10 {
+  background-color: rgba(6, 182, 212, 0.12) !important;
+}
+:root:not(.dark) .bg-purple-600\/5,
+:root:not(.dark) .bg-purple-500\/5,
+:root:not(.dark) .bg-purple-600\/10 {
+  background-color: rgba(139, 92, 246, 0.12) !important;
+}
+:root:not(.dark) .bg-indigo-600\/10,
+:root:not(.dark) .bg-indigo-500\/10 {
+  background-color: rgba(99, 102, 241, 0.14) !important;
+}
+:root:not(.dark) .bg-emerald-600\/10,
+:root:not(.dark) .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+:root:not(.dark) .bg-amber-600\/10,
+:root:not(.dark) .bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+}
+
+/* Custom layout colors inside specific pages */
+:root:not(.dark) .bg-slate-950\/50 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Ensure inputs remain legible */
+:root:not(.dark) input,
+:root:not(.dark) textarea {
+  color: #0F172A !important;
+}

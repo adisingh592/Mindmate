@@ -1,0 +1,57 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production/Build
+/dist
+/build
+/.next
+/out
+
+# Debug/Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.pem
+
+# Editor/IDE Configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.settings/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# AI & Agent Metadata (Hides AI-development traces and instructions)
+.cursor/
+guidelines/
+.gemini/
+.cursorrules
+.copilotinstructions
+.aider*
+.claude*
+.idea/copilot/
