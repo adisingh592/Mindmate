@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform, useSpring } from 'framer-motion';
 import {
   ArrowRight,
   Brain,
@@ -128,12 +128,33 @@ const faqItems = [
 export function Landing() {
   const reduce = useReducedMotion();
 
+  // Scroll animations
+  const { scrollY, scrollYProgress } = useScroll();
+  
+  // Reading progress bar spring
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Parallax ambient backdrop orbs
+  const orb1Y = useTransform(scrollY, [0, 2000], [0, 250]);
+  const orb2Y = useTransform(scrollY, [0, 2000], [0, -350]);
+  const orb3Y = useTransform(scrollY, [0, 2000], [0, 150]);
+
   return (
     <div className="theme-landing min-h-screen overflow-x-hidden bg-slate-950 text-slate-100 selection:bg-indigo-500/30 selection:text-white">
+      {/* Scroll Reading Progress Indicator */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#6366F1] via-[#3B82F6] to-[#06B6D4] z-[100] origin-[0%]"
+        style={{ scaleX }}
+      />
+
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -top-32 left-1/4 h-[500px] w-[500px] rounded-full bg-indigo-600/10 blur-[150px]" />
-        <div className="absolute top-1/3 right-0 h-[600px] w-[600px] rounded-full bg-cyan-500/5 blur-[180px]" />
-        <div className="absolute bottom-1/4 left-0 h-[400px] w-[400px] rounded-full bg-violet-600/10 blur-[120px]" />
+        <motion.div style={{ y: reduce ? 0 : orb1Y }} className="absolute -top-32 left-1/4 h-[500px] w-[500px] rounded-full bg-indigo-600/10 blur-[150px]" />
+        <motion.div style={{ y: reduce ? 0 : orb2Y }} className="absolute top-1/3 right-0 h-[600px] w-[600px] rounded-full bg-cyan-500/5 blur-[180px]" />
+        <motion.div style={{ y: reduce ? 0 : orb3Y }} className="absolute bottom-1/4 left-0 h-[400px] w-[400px] rounded-full bg-violet-600/10 blur-[120px]" />
       </div>
 
       <motion.nav
