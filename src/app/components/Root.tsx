@@ -6,34 +6,10 @@ import { ThemeToggle } from './ThemeToggle';
 export function Root() {
   const location = useLocation();
 
-  // Get dynamic page-wise gradient/theme identifier class
-  const getThemeClass = (path: string) => {
-    if (path === '/app') return 'theme-dashboard';
-    if (path.includes('/chat')) return 'theme-chat';
-    if (path.includes('/planner')) return 'theme-planner';
-    if (path.includes('/habits')) return 'theme-habits';
-    if (path.includes('/journal')) return 'theme-journal';
-    if (path.includes('/analytics')) return 'theme-analytics';
-    if (path.includes('/books')) return 'theme-books';
-    if (path.includes('/skills')) return 'theme-skills';
-    if (path.includes('/music')) return 'theme-music';
-    if (path.includes('/movies')) return 'theme-movies';
-    if (path.includes('/gamification')) return 'theme-gamification';
-    if (path.includes('/profile')) return 'theme-profile';
-    if (path.includes('/settings')) return 'theme-settings';
-    if (path.includes('/notifications')) return 'theme-notifications';
-    if (path.includes('/voice')) return 'theme-voice';
-    if (path.includes('/mood')) return 'theme-mood';
-    if (path.includes('/history')) return 'theme-history';
-    return '';
-  };
-
-  const themeClass = getThemeClass(location.pathname);
-
   return (
-    <div className={`relative min-h-screen w-full bg-background transition-colors duration-300 ${themeClass}`}>
+    <div className="relative min-h-screen w-full bg-[#0A0A0A] text-[#F5F5F5]">
       {/* Floating top right Theme Toggle Switcher */}
-      <div className="fixed top-6 right-6 z-50">
+      <div className="fixed right-4 top-4 z-50 md:right-6 md:top-6">
         <ThemeToggle />
       </div>
 
@@ -42,7 +18,7 @@ export function Root() {
       </main>
       
       <FloatingDock />
-      <CommandCenter />
+      {location.pathname.startsWith('/app') ? <CommandCenter /> : null}
     </div>
   );
 }

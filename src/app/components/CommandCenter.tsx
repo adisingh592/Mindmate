@@ -34,26 +34,26 @@ interface CommandItem {
 
 const commands: CommandItem[] = [
   // Level 1 Pages
-  { icon: Home, label: 'Dashboard', category: 'Core', path: '/app', description: 'Go to your main workspace', emoji: '🏠' },
-  { icon: MessageSquare, label: 'Chat', category: 'Core', path: '/app/chat', description: 'Speak with your AI Companion', emoji: '💬' },
-  { icon: Calendar, label: 'Planner', category: 'Core', path: '/app/planner', description: 'Manage your schedule and habits', emoji: '🎯' },
-  { icon: BookOpen, label: 'Journal', category: 'Core', path: '/app/journal', description: 'Write daily logs and reflections', emoji: '🧾' },
-  { icon: BarChart3, label: 'Analytics', category: 'Core', path: '/app/analytics', description: 'Review your mood and progress stats', emoji: '📊' },
-  { icon: User, label: 'Profile', category: 'Core', path: '/app/profile', description: 'View your identity and achievements', emoji: '👤' },
+  { icon: Home, label: 'Life Command Center', category: 'Primary', path: '/app', description: 'Main operating layer for personal growth', emoji: '🏠' },
+  { icon: MessageSquare, label: 'Neural Link', category: 'Primary', path: '/app/chat', description: 'Conversation network with connected memory', emoji: '💬' },
+  { icon: Calendar, label: 'Mission Control', category: 'Primary', path: '/app/planner', description: 'Mission planning and objective tracking', emoji: '🎯' },
+  { icon: BookOpen, label: 'Memory Archive', category: 'Primary', path: '/app/journal', description: 'Timeline archive for entries and recalls', emoji: '🧾' },
+  { icon: BarChart3, label: 'System Intelligence', category: 'Primary', path: '/app/analytics', description: 'Cross-signal analytics and forecasting', emoji: '📊' },
+  { icon: User, label: 'Identity Core', category: 'Primary', path: '/app/profile', description: 'Identity, achievements, and growth profile', emoji: '👤' },
 
   // Level 2 & 3 Pages
-  { icon: Book, label: 'Books', category: 'Explore', path: '/app/books', description: 'Read books, papers and recommendations', emoji: '📚' },
-  { icon: GraduationCap, label: 'Skills', category: 'Explore', path: '/app/skills', description: 'Track and learn new capabilities', emoji: '🎓' },
-  { icon: Music, label: 'Music', category: 'Explore', path: '/app/music', description: 'Relaxing tunes and focus playlists', emoji: '🎵' },
-  { icon: Film, label: 'Movies', category: 'Explore', path: '/app/movies', description: 'Inspirational movies curated for you', emoji: '🎬' },
-  { icon: Smile, label: 'Mood Hub', category: 'Explore', path: '/app/mood', description: 'Deep dive into your emotional well-being', emoji: '😊' },
-  { icon: History, label: 'History', category: 'Explore', path: '/app/history', description: 'Timeline of your actions and memories', emoji: '📍' },
-  { icon: Trophy, label: 'Gamification & Growth', category: 'Explore', path: '/app/gamification', description: 'Level up and claim reward points', emoji: '🎮' },
-  { icon: Mic, label: 'Voice Companion', category: 'Explore', path: '/app/voice', description: 'Hands-free voice companion logs', emoji: '🎤' },
+  { icon: Book, label: 'Knowledge Vault', category: 'Secondary', path: '/app/books', description: 'Reading intelligence, highlights, and lessons', emoji: '📚' },
+  { icon: GraduationCap, label: 'Skill Matrix', category: 'Secondary', path: '/app/skills', description: 'Skill tree and path evolution', emoji: '🎓' },
+  { icon: Music, label: 'Audio Nexus', category: 'Secondary', path: '/app/music', description: 'Mood and focus frequency libraries', emoji: '🎵' },
+  { icon: Film, label: 'Cinema Grid', category: 'Secondary', path: '/app/movies', description: 'Curated film intelligence by mood', emoji: '🎬' },
+  { icon: Smile, label: 'Emotion Scanner', category: 'Secondary', path: '/app/mood', description: 'Emotion radar and trigger map', emoji: '😊' },
+  { icon: History, label: 'Timeline Nexus', category: 'Secondary', path: '/app/history', description: 'Temporal map of progress signals', emoji: '📍' },
+  { icon: Trophy, label: 'Growth Journey', category: 'Secondary', path: '/app/gamification', description: 'XP, levels, and growth challenges', emoji: '🎮' },
+  { icon: Mic, label: 'Audio Intelligence', category: 'Secondary', path: '/app/voice', description: 'Voice chat, reflection, and journal', emoji: '🎤' },
   
   // Settings & Utilities
-  { icon: Settings, label: 'Settings', category: 'Utility', path: '/app/settings', description: 'Configure app features and theme', emoji: '⚙️' },
-  { icon: Bell, label: 'Notifications', category: 'Utility', path: '/app/notifications', description: 'View recent updates and nudges', emoji: '🔔' },
+  { icon: Settings, label: 'Control Center', category: 'Utility', path: '/app/settings', description: 'System preferences and controls', emoji: '⚙️' },
+  { icon: Bell, label: 'Signal Center', category: 'Utility', path: '/app/notifications', description: 'Realtime alerts and assistant nudges', emoji: '🔔' },
 ];
 
 export function CommandCenter() {
